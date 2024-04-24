@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TOURS AND tRAVELS Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* Background image setup */
+            background-image: url('https://images.search.yahoo.com/images/view;ylt=Awrhee_o1ihmKdUKsoKJzbkF;_ylu=c2VjA3NyBHNsawNpbWcEb2lkA2JkOGRmMjZjOWM4YTMyMDE4MTRjNmYyMjliMjE4ZWMwBGdwb3MDMgRpdANiaW5n?back=https%3A%2F%2Fimages.search.yahoo.com%2Fsearch%2Fimages%3Fp%3DTOURS%2BAND%2BTRAVLES%26type%3DE210US885G0%26fr%3Dmcafee%26fr2%3Dpiv-web%26tab%3Dorganic%26ri%3D2&w=1299&h=587&imgurl=www.visitplovdiv.com%2Fsites%2Fdefault%2Ffiles%2FTravel-and-Tours.jpg&rurl=https%3A%2F%2Fwww.visitplovdiv.com%2Fen%2Ftour-agencies-Plovdiv&size=192.9KB&p=TOURS+AND+TRAVLES&oid=bd8df26c9c8a3201814c6f229b218ec0&fr2=piv-web&fr=mcafee&tt=Tour+agencies+%7C+visitplovdiv.com&b=0&ni=21&no=2&ts=&tab=organic&sigr=yurZFOw4VWh2&sigb=GZpqnF3nYEHw&sigi=boV3AH37q.b&sigt=Qah7cJTXQYry&.crumb=PuIBOuYVfh6&fr=mcafee&fr2=piv-web&type=E210US885G0');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .register-container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background */
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: #ffffff;
+            cursor: pointer;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="register-container">
+        <h2>GISTER FOR TPURSAND TRAVELS</h2>
+        <form id="register-form">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter your username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="button" onclick="registerUser()">Register</button>
+        </form>
+    </div>
+
+    <script>
+        function registerUser() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            // Check if the username contains a script tag
+            if (username.includes("<script>")) {
+                alert("XSS Attack Detected!");
+            } else {
+                // Simulated registration process (store credentials in localStorage)
+                localStorage.setItem("username", username);
+                localStorage.setItem("password", password);
+
+                // Display registration success message
+                alert("Registration successful! Please proceed to login.");
+
+                // Redirect to index.html after the alert is dismissed
+                setTimeout(function () {
+                    window.location.href = "index.html";
+                }, 100); // Delay to ensure the alert is fully displayed
+            }
+        }
+    </script>
+</body>
+
+</html>
